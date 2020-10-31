@@ -1,0 +1,27 @@
+#frame-app
+  display: flex
+  width: 100%
+  min-height: 100vh
+
+  &>svg:nth-child(1), &>svg:nth-child(4)
+    display: block
+    width: 120px
+
+  &>svg:nth-child(2), &>svg:nth-child(5)
+    display: none
+    width: 100%
+    height: 50px
+
+  &>main
+    flex: auto
+
+@media screen and (max-width: 500px)
+  #frame-app
+    flex-direction: column
+    justify-content: space-between
+
+    &>svg:nth-child(1), &>svg:nth-child(4)
+      display: none
+
+    &>svg:nth-child(2), &>svg:nth-child(5)
+      display: block

@@ -1,0 +1,47 @@
+#capa
+  width: 100%
+  min-height: 100%;
+  padding: 20px
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+
+  img
+    max-width 350px
+    width: 100%
+    margin-bottom: 40px
+
+  &>div
+    display: flex
+    align-content: center
+    justify-content: center
+    width: 100%
+
+    a
+      display: table
+      background: #efe19a
+      color: #871e20
+      border-radius: 40px
+      padding: 10px 30px
+      font-weight: bold
+      font-size: 20px
+      text-transform: uppercase
+      margin: 0 10px
+
+@media screen and (max-width: 500px)
+  #capa
+    img
+      max-width 250px
+      margin-bottom: 40px
+
+    &>div
+      display: table
+      margin: 0 auto
+
+      a
+        font-size: 20px
+        margin: 0 0 20px
+        width: 100%
+        text-align: center
+        padding: 10px
