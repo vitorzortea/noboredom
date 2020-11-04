@@ -1,7 +1,7 @@
 <h1>
   <img src="/assets/img/logo-title.png" alt="No Boredom" />
 </h1>
-<div id="carregando" style="display: none">
+<div id="carregando" *ngIf="loading">
   <img src="/assets/img/tedio.png" alt="Zumbi com Tédio" />
   <h2>Não vire zumbi ainda!</h2>
   <p>Sua sugestão já está vindo</p>
@@ -12,27 +12,23 @@
     <div></div>
   </div>
 </div>
-<div id="atividade">
-  <div class="title-active">
-    <img src="/assets/img/atividade.png" alt="Zombie" />
-    <h2>Nome da Atividade</h2>
-    <img src="/assets/img/hobbies/anime.jpg" alt="Nome da Atividade" />
+<div id="atividade" *ngIf="!loading">
+  <div>
+    <div>
+      <img src="/assets/img/atividade.png" alt="Zombie" />
+      <h2>{{atividade.name}}</h2>
+    </div>
+    <main>
+      <img src="/assets/img/hobbies/{{atividade.image}}.jpg" alt="{{atividade.name}}" />
+      <div>
+        <p>{{atividade.describle}}</p>
+        <ul>
+          <li *ngFor="let link of atividade.links">
+            <a href={{link.link}} target="_blank"><i class={{link.icon}}></i> {{link.text}}</a>
+          </li>
+        </ul>
+      </div>
+    </main>
   </div>
-  <div class="info">
-    <span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </span>
-    <ul>
-      <li>
-        <a>Tutorial Iniciante</a>
-      </li>
-      <li>
-        <a>Tutorial Avançado</a>
-      </li>
-      <li>
-        <a>Lista de lugares</a>
-      </li>
-    </ul>
-  </div>
+  <i class="fas fa-redo-alt" (click)="start()"></i>
 </div>
